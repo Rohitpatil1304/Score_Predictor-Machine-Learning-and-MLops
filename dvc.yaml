@@ -1,0 +1,24 @@
+stages:
+  Data_Preprocessing:
+    cmd: python src/data/Data_Preprocessing.py
+    deps:
+      - data/raw/dataset_level_new.pkl
+      - src/data/Data_Preprocessing.py
+    outs:
+      - data/processed/dataset_level2.pkl
+
+  Feature_Engineering:
+    cmd: python src/features/Feature_Engineering.py
+    deps:
+      - data/processed/dataset_level2.pkl
+      - src/features/Feature_Engineering.py
+    outs:
+      - data/interim/dataset_level3_feature_ready.pkl
+
+  Training_Model:
+    cmd: python src/models/Training_Model.py
+    deps:
+      - data/interim/dataset_level3_feature_ready.pkl
+      - src/models/Training_Model.py
+    outs:
+      - model/pipe.pkl

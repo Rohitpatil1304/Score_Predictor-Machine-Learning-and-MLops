@@ -1,0 +1,50 @@
+schema: '2.0'
+stages:
+  Data_Preprocessing:
+    cmd: python src/data/Data_Preprocessing.py
+    deps:
+    - path: data/raw/dataset_level_new.pkl
+      hash: md5
+      md5: 383f7af96a69763247d3f873ab1fcd58
+      size: 198971179
+    - path: src/data/Data_Preprocessing.py
+      hash: md5
+      md5: 525c5931006d995b835de12c1af87570
+      size: 3878
+    outs:
+    - path: data/processed/dataset_level2.pkl
+      hash: md5
+      md5: 5f2d9ce5c465b2a5e44ffa2b7983aa15
+      size: 4508061
+  Feature_Engineering:
+    cmd: python src/features/Feature_Engineering.py
+    deps:
+    - path: data/processed/dataset_level2.pkl
+      hash: md5
+      md5: 5f2d9ce5c465b2a5e44ffa2b7983aa15
+      size: 4508061
+    - path: src/features/Feature_Engineering.py
+      hash: md5
+      md5: 1c22aae426b3c34196c235c81ebf0e09
+      size: 1871
+    outs:
+    - path: data/interim/dataset_level3_feature_ready.pkl
+      hash: md5
+      md5: 6c7bc12b6997889c2fff81cce879c23b
+      size: 3473766
+  Training_Model:
+    cmd: python src/models/Training_Model.py
+    deps:
+    - path: data/interim/dataset_level3_feature_ready.pkl
+      hash: md5
+      md5: 6c7bc12b6997889c2fff81cce879c23b
+      size: 3473766
+    - path: src/models/Training_Model.py
+      hash: md5
+      md5: 57223ff17b2af4e95c1528ba3cc2b548
+      size: 1273
+    outs:
+    - path: model/pipe.pkl
+      hash: md5
+      md5: 0a1cf76411463bfb716c6aa50afe908b
+      size: 48556984
