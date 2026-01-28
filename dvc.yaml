@@ -20,5 +20,9 @@ stages:
     deps:
       - data/interim/dataset_level3_feature_ready.pkl
       - src/models/Training_Model.py
+    params:
+      - train
+      - model
+      - param_dist
     outs:
       - model/pipe.pkl

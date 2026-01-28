@@ -1,0 +1,23 @@
+# Training parameters
+train:
+  test_size: 0.2
+  random_state: 1
+  cv_folds: 5
+  n_trials: 10
+
+# XGBoost model parameters
+model:
+  objective: "reg:squarederror"
+  random_state: 1
+  eval_metric: "rmse"
+  tree_method: "hist"
+
+# Hyperparameter search space
+param_dist:
+  n_estimators: [300, 500, 800, 1000]
+  learning_rate: [0.01, 0.05, 0.1, 0.2]
+  max_depth: [4, 6, 8, 10, 12]
+  subsample: [0.6, 0.8, 1.0]
+  colsample_bytree: [0.6, 0.8, 1.0]
+  reg_alpha: [0, 0.1, 1]
+  reg_lambda: [1, 1.5, 2]

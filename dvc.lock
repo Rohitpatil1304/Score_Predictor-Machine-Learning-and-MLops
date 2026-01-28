@@ -14,15 +14,15 @@ stages:
     outs:
     - path: data/processed/dataset_level2.pkl
       hash: md5
-      md5: 5f2d9ce5c465b2a5e44ffa2b7983aa15
-      size: 4508061
+      md5: f0c1c9240441d0ff8db7e7ff63dba28c
+      size: 4503007
   Feature_Engineering:
     cmd: python src/features/Feature_Engineering.py
     deps:
     - path: data/processed/dataset_level2.pkl
       hash: md5
-      md5: 5f2d9ce5c465b2a5e44ffa2b7983aa15
-      size: 4508061
+      md5: f0c1c9240441d0ff8db7e7ff63dba28c
+      size: 4503007
     - path: src/features/Feature_Engineering.py
       hash: md5
       md5: 1c22aae426b3c34196c235c81ebf0e09
@@ -30,21 +30,66 @@ stages:
     outs:
     - path: data/interim/dataset_level3_feature_ready.pkl
       hash: md5
-      md5: 6c7bc12b6997889c2fff81cce879c23b
-      size: 3473766
+      md5: dc3d93721687d627a632496256488e05
+      size: 3469184
   Training_Model:
     cmd: python src/models/Training_Model.py
     deps:
     - path: data/interim/dataset_level3_feature_ready.pkl
       hash: md5
-      md5: 6c7bc12b6997889c2fff81cce879c23b
-      size: 3473766
+      md5: dc3d93721687d627a632496256488e05
+      size: 3469184
     - path: src/models/Training_Model.py
       hash: md5
-      md5: a7bc11974bb6de29127826f42e936319
-      size: 1272
+      md5: b5b1bb9d27aa564413f1ba4f317ced97
+      size: 4028
+    params:
+      params.yaml:
+        model:
+          objective: reg:squarederror
+          random_state: 1
+          eval_metric: rmse
+          tree_method: hist
+        param_dist:
+          n_estimators:
+          - 300
+          - 500
+          - 800
+          - 1000
+          learning_rate:
+          - 0.01
+          - 0.05
+          - 0.1
+          - 0.2
+          max_depth:
+          - 4
+          - 6
+          - 8
+          - 10
+          - 12
+          subsample:
+          - 0.6
+          - 0.8
+          - 1.0
+          colsample_bytree:
+          - 0.6
+          - 0.8
+          - 1.0
+          reg_alpha:
+          - 0
+          - 0.1
+          - 1
+          reg_lambda:
+          - 1
+          - 1.5
+          - 2
+        train:
+          test_size: 0.2
+          random_state: 1
+          cv_folds: 5
+          n_trials: 10
     outs:
     - path: model/pipe.pkl
       hash: md5
-      md5: 6446cffe2a6c0f8f1478d0efe8c74db3
-      size: 35270533
+      md5: 6f02d8a0bfd99a0eefefda22dd21ef8f
+      size: 10594819
