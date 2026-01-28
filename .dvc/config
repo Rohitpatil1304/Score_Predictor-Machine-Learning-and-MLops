@@ -1,2 +1,6 @@
 [cache]
     dir = C:\dvc-cache
+[core]
+    remote = data_versioning
+['remote "data_versioning"']
+    url = C:\Users\Rohit\OneDrive\Desktop\Data_score_prediction

@@ -31,7 +31,7 @@ trf = ColumnTransformer(
 pipe = Pipeline(steps = [
     ('step 1' , trf),
     ('step 2' , StandardScaler()),
-    ('step 3' , XGBRegressor(n_estimators=1000 , learning_rate=0.2 , max_depth=12 , random_state=1))
+    ('step 3' , XGBRegressor(n_estimators=700 , learning_rate=0.2 , max_depth=12 , random_state=1))
 ])
 
 
