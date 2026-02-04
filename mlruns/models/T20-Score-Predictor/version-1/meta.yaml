@@ -1,0 +1,16 @@
+creation_timestamp: 1770110769851
+current_stage: Staging
+deployment_job_state: null
+description: 'XGBoost model for T20 cricket score prediction. Trained with best hyperparameters.
+  Test R2: 0.7454, Test MAE: 12.0307'
+last_updated_timestamp: 1770110770331
+model_id: m-4a6479eb9a2946298b843a4ad72ed5ed
+name: T20-Score-Predictor
+run_id: 5b10b05955104afaaf491bc72003a6d7
+run_link: null
+source: models:/m-4a6479eb9a2946298b843a4ad72ed5ed
+status: READY
+status_message: null
+storage_location: file:C:/Users/Rohit/Documents/T20_Score_Predictor/mlruns/675708495205140993/models/m-4a6479eb9a2946298b843a4ad72ed5ed/artifacts
+user_id: null
+version: 1

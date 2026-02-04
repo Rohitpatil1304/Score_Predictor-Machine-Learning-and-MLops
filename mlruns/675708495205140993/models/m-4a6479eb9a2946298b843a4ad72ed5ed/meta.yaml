@@ -1,0 +1,10 @@
+artifact_location: file:C:/Users/Rohit/Documents/T20_Score_Predictor/mlruns/675708495205140993/models/m-4a6479eb9a2946298b843a4ad72ed5ed/artifacts
+creation_timestamp: 1770110759770
+experiment_id: '675708495205140993'
+last_updated_timestamp: 1770110769645
+model_id: m-4a6479eb9a2946298b843a4ad72ed5ed
+model_type: null
+name: model
+source_run_id: 5b10b05955104afaaf491bc72003a6d7
+status: 2
+status_message: null

@@ -26,3 +26,13 @@ stages:
       - param_dist
     outs:
       - model/pipe.pkl
+      - reports/best_params.json
+
+  Register_Model:
+    cmd: python src/models/register_model.py
+    deps:
+      - src/models/register_model.py
+      - model/pipe.pkl
+    params:
+      - train
+      - model

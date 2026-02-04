@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/Rohit/Documents/T20_Score_Predictor/mlruns/675708495205140993/8d0799affd834465b1ef75b947866b2d/artifacts
+end_time: 1770110586913
+entry_point_name: ''
+experiment_id: '675708495205140993'
+lifecycle_stage: active
+run_id: 8d0799affd834465b1ef75b947866b2d
+run_name: trial_6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1770110584347
+status: 3
+tags: []
+user_id: Rohit

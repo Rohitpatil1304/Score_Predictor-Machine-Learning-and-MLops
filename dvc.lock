@@ -41,8 +41,8 @@ stages:
       size: 3469184
     - path: src/models/Training_Model.py
       hash: md5
-      md5: b5b1bb9d27aa564413f1ba4f317ced97
-      size: 4028
+      md5: 1af8190c9df1041a2523d89ff03d52a5
+      size: 4405
     params:
       params.yaml:
         model:
@@ -53,43 +53,55 @@ stages:
         param_dist:
           n_estimators:
           - 300
-          - 500
-          - 800
-          - 1000
+          - 600
           learning_rate:
-          - 0.01
           - 0.05
           - 0.1
-          - 0.2
           max_depth:
-          - 4
           - 6
           - 8
-          - 10
-          - 12
           subsample:
-          - 0.6
-          - 0.8
-          - 1.0
+          - 0.7
           colsample_bytree:
-          - 0.6
           - 0.8
-          - 1.0
           reg_alpha:
           - 0
-          - 0.1
-          - 1
           reg_lambda:
           - 1
-          - 1.5
-          - 2
         train:
-          test_size: 0.2
+          test_size: 0.1
           random_state: 1
           cv_folds: 5
           n_trials: 10
     outs:
     - path: model/pipe.pkl
       hash: md5
-      md5: 6f02d8a0bfd99a0eefefda22dd21ef8f
-      size: 10594819
+      md5: 4ee89cbed82251588a1ec88fffadfbdd
+      size: 3931285
+    - path: reports/best_params.json
+      hash: md5
+      md5: 7cb366fb219be106142cac8aa12a45a9
+      size: 223
+  Register_Model:
+    cmd: python src/models/register_model.py
+    deps:
+    - path: model/pipe.pkl
+      hash: md5
+      md5: 4ee89cbed82251588a1ec88fffadfbdd
+      size: 3931285
+    - path: src/models/register_model.py
+      hash: md5
+      md5: 784b5399bd7150ff7c853f6b3da8e925
+      size: 11011
+    params:
+      params.yaml:
+        model:
+          objective: reg:squarederror
+          random_state: 1
+          eval_metric: rmse
+          tree_method: hist
+        train:
+          test_size: 0.1
+          random_state: 1
+          cv_folds: 5
+          n_trials: 10

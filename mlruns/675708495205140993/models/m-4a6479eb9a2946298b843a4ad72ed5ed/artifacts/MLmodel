@@ -1,0 +1,22 @@
+artifact_path: file:C:/Users/Rohit/Documents/T20_Score_Predictor/mlruns/675708495205140993/models/m-4a6479eb9a2946298b843a4ad72ed5ed/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.8.1
+model_id: m-4a6479eb9a2946298b843a4ad72ed5ed
+model_size_bytes: 3931285
+model_uuid: m-4a6479eb9a2946298b843a4ad72ed5ed
+prompts: null
+run_id: 5b10b05955104afaaf491bc72003a6d7
+utc_time_created: '2026-02-03 09:25:59.950114'
