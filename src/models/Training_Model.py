@@ -111,23 +111,20 @@ with mlflow.start_run(run_name="Parent_Run"):
             pipe.fit(X_train, y_train)
 
             # Predictions
-            y_train_pred = pipe.predict(X_train)
             y_test_pred = pipe.predict(X_test)
 
             # Metrics
-            train_r2 = r2_score(y_train, y_train_pred)
+    
             test_r2 = r2_score(y_test, y_test_pred)
             test_mae = mean_absolute_error(y_test, y_test_pred)
 
             # Log params & metrics
             mlflow.log_params(params)
-            mlflow.log_metric("train_r2", train_r2)
             mlflow.log_metric("test_r2", test_r2)
             mlflow.log_metric("test_mae", test_mae)
 
             print(
                 f"Trial {i} | "
-                f"Train R2: {train_r2:.4f} | "
                 f"Test R2: {test_r2:.4f} | "
                 f"MAE: {test_mae:.4f}"
             )

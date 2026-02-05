@@ -41,8 +41,8 @@ stages:
       size: 3469184
     - path: src/models/Training_Model.py
       hash: md5
-      md5: 1af8190c9df1041a2523d89ff03d52a5
-      size: 4405
+      md5: 842e26bfa978fe8890190d7cf732bb5b
+      size: 4204
     params:
       params.yaml:
         model:
@@ -52,14 +52,15 @@ stages:
           tree_method: hist
         param_dist:
           n_estimators:
-          - 300
-          - 600
+          - 500
+          - 1000
           learning_rate:
-          - 0.05
+          - 0.01
           - 0.1
           max_depth:
           - 6
           - 8
+          - 10
           subsample:
           - 0.7
           colsample_bytree:
@@ -76,19 +77,19 @@ stages:
     outs:
     - path: model/pipe.pkl
       hash: md5
-      md5: 4ee89cbed82251588a1ec88fffadfbdd
-      size: 3931285
+      md5: ac00930b54bd5606b6f69961e9a6bbc9
+      size: 21091674
     - path: reports/best_params.json
       hash: md5
-      md5: 7cb366fb219be106142cac8aa12a45a9
-      size: 223
+      md5: 33b0445d55382f573813f11dcb560ed9
+      size: 224
   Register_Model:
     cmd: python src/models/register_model.py
     deps:
     - path: model/pipe.pkl
       hash: md5
-      md5: 4ee89cbed82251588a1ec88fffadfbdd
-      size: 3931285
+      md5: ac00930b54bd5606b6f69961e9a6bbc9
+      size: 21091674
     - path: src/models/register_model.py
       hash: md5
       md5: 784b5399bd7150ff7c853f6b3da8e925
