@@ -2,7 +2,7 @@
 
 > **A Machine Learning-powered application to predict the final score in T20 cricket matches based on current match situations.**
 
-[![MLflow](https://img.shields.io/badge/MLflow-Tracking-blue)]
+![MLflow](https://img.shields.io/badge/MLflow-Tracking-blue)
 [![DVC](https://img.shields.io/badge/DVC-Data%20Version%20Control-purple)](https://dvc.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red)](https://streamlit.io/)
