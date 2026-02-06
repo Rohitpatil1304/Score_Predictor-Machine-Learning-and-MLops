@@ -17,9 +17,9 @@ import mlflow.sklearn
 import dagshub
 
 
-# =========================
+
 # DAGSHUB + MLFLOW SETUP
-# =========================
+
 dagshub.init(
     repo_owner="Rohitpatil1304",
     repo_name="Score_Predictor-Machine-Learning-and-MLops-",
@@ -33,9 +33,9 @@ mlflow.set_tracking_uri(
 mlflow.set_experiment("Tracker")
 
 
-# =========================
+
 # LOAD PARAMS
-# =========================
+
 with open("params.yaml", "r") as f:
     params_config = yaml.safe_load(f)
 
@@ -44,9 +44,9 @@ model_params = params_config["model"]
 param_dist_config = params_config["param_dist"]
 
 
-# =========================
+
 # LOAD DATA
-# =========================
+
 df = pd.read_pickle("data/interim/dataset_level3_feature_ready.pkl")
 
 df.drop(columns=["batting_team", "bowling_team", "city"], inplace=True)
@@ -62,9 +62,9 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 
-# =========================
+
 # PIPELINE
-# =========================
+
 pipe = Pipeline(steps=[
     ("model", XGBRegressor(
         objective=model_params["objective"],
@@ -75,9 +75,9 @@ pipe = Pipeline(steps=[
 ])
 
 
-# =========================
+
 # ALL PARAMETER COMBINATIONS
-# =========================
+
 param_grid = {
     f"model__{key}": value
     for key, value in param_dist_config.items()
@@ -87,9 +87,9 @@ param_list = list(ParameterGrid(param_grid))
 print(f"Total parameter combinations: {len(param_list)}")
 
 
-# =========================
+
 # TRAINING + NESTED MLFLOW
-# =========================
+
 with mlflow.start_run(run_name="Parent_Run"):
 
     mlflow.log_param("model", "XGBRegressor")
@@ -136,9 +136,9 @@ with mlflow.start_run(run_name="Parent_Run"):
                 best_model = copy.deepcopy(pipe)
 
 
-    # =========================
+
     # LOG BEST MODEL
-    # =========================
+
     mlflow.log_metric("best_test_r2", best_score)
     mlflow.log_params(best_params)
 
