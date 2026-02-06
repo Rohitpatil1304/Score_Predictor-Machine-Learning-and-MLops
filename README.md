@@ -14,7 +14,7 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Architecture](#pipeline-architecture)
+- [Pipeline Architecture](#pipeline-architecture)
 - [Installation](#installation)
 - [Usage](#usage)
 - [MLOps Pipeline](#mlops-pipeline)
