@@ -65,46 +65,8 @@ The model is trained on data from **10 international cricket teams**:
 
 ---
 
-##  Project Architecture
-
-`
-
-                        T20 Score Predictor                       
-
-                                                                  
-                 
-    Raw Data      Processed      Feature           
-    (Pickle)            Data            Engineering        
-                 
-                                                               
-                         
-                                                                 
-                                                                 
-                                             
-                     Model Training                            
-                      (XGBoost)                                
-                     + Grid Search                             
-                                             
-                                                                 
-                                    
-                                                              
-                    
-        MLflow        Model       Model                   
-       Tracking       (.pkl)     Registry                 
-       (DagsHub)                 (Staging)                
-                    
-                                                                
-                                     
-                                                              
-                                
-        FastAPI      Streamlit                    
-        Backend                 Frontend                    
-       (Port 8000)             (Port 8501)                  
-                                
-                                                                  
-
-`
-
+##  Pipeline Architecture
+![Pipeline](https://github.com/Rohitpatil1304/Score_Predictor-Machine-Learning-and-MLops/blob/master/src/visualization/Pipeline%20Structure.jpeg)
 ---
 
 ##  Installation
