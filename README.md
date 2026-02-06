@@ -239,12 +239,7 @@ T20_Score_Predictor/
   reports/
      best_params.json     # Best model parameters
      figures/             # Generated plots
-`
-
----
-
-- GitHub: [@Rohitpatil1304](https://github.com/Rohitpatil1304)
-- DagsHub: [Score_Predictor-Machine-Learning-and-MLops-](https://dagshub.com/Rohitpatil1304/Score_Predictor-Machine-Learning-and-MLops)
+'
 
 ---
 
