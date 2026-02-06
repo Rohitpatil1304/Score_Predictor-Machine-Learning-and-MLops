@@ -504,17 +504,8 @@ export MLFLOW_TRACKING_PASSWORD=<your_token>
 
 ---
 
-##  Author
-
-**Rohit Patil**
 - GitHub: [@Rohitpatil1304](https://github.com/Rohitpatil1304)
-- DagsHub: [Score_Predictor-Machine-Learning-and-MLops-](https://dagshub.com/Rohitpatil1304/Score_Predictor-Machine-Learning-and-MLops-)
-
----
-
-##  License
-
-This project is based on the [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) project template.
+- DagsHub: [Score_Predictor-Machine-Learning-and-MLops-](https://dagshub.com/Rohitpatil1304/Score_Predictor-Machine-Learning-and-MLops)
 
 ---
 
